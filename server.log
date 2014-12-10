@@ -1,0 +1,408 @@
+2014-12-10T09:56:42.858Z
+at Type.Logger [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/logger.js:67:26)
+'Publishing log write stream on port: 9001'
+
+2014-12-10T09:56:42.882Z
+at Type.Favicon_readFile [as readFile] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/favicon.js:69:16)
+'Favicon.readFile' '/Users/igi/Github/node/mvc/test-app/favicon.ico'
+
+2014-12-10T09:56:42.884Z
+at Type.Favicon_construct [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/favicon.js:33:16)
+'Favicon.construct' { name: 'core/favicon',
+  path: '@{basePath}/favicon.ico' }
+
+2014-12-10T09:56:42.901Z
+at Type.View_construct [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/view.js:80:20)
+'View.construct' { cache: false,
+  autoescape: true,
+  varControls: [ '{{', '}}' ],
+  tagControls: [ '{%', '%}' ],
+  cmtControls: [ '{#', '#}' ],
+  locals: {},
+  cacheComponent: false,
+  themes: '@{appPath}/themes/',
+  views: '@{appPath}/views/',
+  suffix: '.twig',
+  theme: 'default',
+  name: 'core/view',
+  loader: { resolve: [Function], load: [Function] } }
+
+2014-12-10T09:56:42.902Z
+at Type.Bootstrap_init [as init] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/bootstrap.js:101:16)
+{ aliases: 
+   [ { key: 'assetsPath',
+       value: '@{basePath}/assets' } ],
+  components: 
+   [ { name: 'core/logger',
+       debug: true,
+       publish: true,
+       port: 9001,
+       file: 'server.log' },
+     { name: 'core/router',
+       defaultRoute: 'index/index',
+       errorRoute: 'index/error' },
+     { name: 'core/favicon',
+       path: '@{basePath}/favicon.ico' },
+     { name: 'core/view',
+       themes: '@{appPath}/themes/',
+       views: '@{appPath}/views/',
+       theme: 'default',
+       cache: false } ],
+  config: 'config-test.js',
+  assetsPath: '@{assetsPath}',
+  port: 9000 }
+
+2014-12-10T09:56:42.903Z
+at Type.Bootstrap_init [as init] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/bootstrap.js:102:16)
+{ initalized: true }
+
+2014-12-10T09:56:42.905Z
+at Type.RequestHooks_set [as set] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/hooks/request.js:38:16)
+'RequestHooks.add' '/favicon.ico' 'function () { [native code] }'
+
+2014-12-10T09:56:42.907Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:53:21)
+'route' 'home/<action>'
+
+2014-12-10T09:56:42.909Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:110:21)
+'RouteRule' { escapePattern: 
+   [ { key: '<action>',
+       value: '(?P<action>[^/]+)' } ],
+  escapeRule: 
+   [ { key: '<action>',
+       value: '(?P<action>[^/]+)' } ],
+  escapedTemplate: 'home/(?P<action>[^/]+)',
+  template: 'home/<action>',
+  paramRules: [],
+  routeParams: [ { key: 'action', value: '<action>' } ],
+  routeRule: 'home/(?P<action>[^/]+)',
+  method: undefined,
+  pattern: 
+   { group: 
+      [ { '0': '(?P<action>[^/]+)',
+          '1': '?P<action>[^/]+',
+          '2': '?P<action>',
+          '3': 'action',
+          '4': '[^/]+',
+          '5': '[^/]+',
+          '6': 6,
+          '7': '^home/(?P<action>[^/]+)$',
+          isNamed: true,
+          pattern: '([^/]+)',
+          key: 'action',
+          index: 0 } ],
+     regex: /^home/([^/]+)$/g },
+  route: 'home/<action>' }
+
+2014-12-10T09:56:42.909Z
+at Type.Router_add [as add] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/router.js:85:16)
+'Router.add: route' { pattern: 'home/<action>',
+  route: 'home/<action>',
+  method: [ 'GET' ] }
+
+2014-12-10T09:56:42.910Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:53:21)
+'route' 'posts/<action>'
+
+2014-12-10T09:56:42.912Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:110:21)
+'RouteRule' { escapePattern: 
+   [ { key: '<action>',
+       value: '(?P<action>(create|update|delete))' } ],
+  escapeRule: 
+   [ { key: '<action>',
+       value: '(?P<action>(create|update|delete))' } ],
+  escapedTemplate: 'posts/(?P<action>(create|update|delete))',
+  template: 'posts/<action>',
+  paramRules: [],
+  routeParams: [ { key: 'action', value: '<action>' } ],
+  routeRule: 'posts/(?P<action>(create|update|delete))',
+  method: undefined,
+  pattern: 
+   { group: 
+      [ { '0': '(?P<action>(create|update|delete))',
+          '1': '?P<action>(create|update|delete)',
+          '2': '?P<action>',
+          '3': 'action',
+          '4': '(create|update|delete)',
+          '5': '(create|update|delete)',
+          '6': '(create|update|delete)',
+          '7': 'create|update|delete',
+          '8': 7,
+          '9': '^posts/(?P<action>(create|update|delete))$',
+          isNamed: true,
+          pattern: '(create|update|delete)',
+          key: 'action',
+          index: 0 } ],
+     regex: /^posts/(create|update|delete)$/g },
+  route: 'posts/<action>' }
+
+2014-12-10T09:56:42.912Z
+at Type.Router_add [as add] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/router.js:85:16)
+'Router.add: route' { pattern: 'posts/<action:(create|update|delete)>',
+  route: 'posts/<action>',
+  method: [ 'GET', 'POST' ] }
+
+2014-12-10T09:56:42.912Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:53:21)
+'route' 'user/view'
+
+2014-12-10T09:56:42.915Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:110:21)
+'RouteRule' { escapePattern: [ { key: '<id>', value: '(?P<id>(\\d+))' } ],
+  escapeRule: [],
+  escapedTemplate: 'user/(?P<id>(\\d+))',
+  template: 'user/<id>',
+  paramRules: [ { key: 'id', value: /^(\d+)$/g } ],
+  routeParams: [],
+  routeRule: null,
+  method: undefined,
+  pattern: 
+   { group: 
+      [ { '0': '(?P<id>(\\d+))',
+          '1': '?P<id>(\\d+)',
+          '2': '?P<id>',
+          '3': 'id',
+          '4': '(\\d+)',
+          '5': '(\\d+)',
+          '6': '(\\d+)',
+          '7': '\\d+',
+          '8': 6,
+          '9': '^user/(?P<id>(\\d+))$',
+          isNamed: true,
+          pattern: '(\\d+)',
+          key: 'id',
+          index: 0 } ],
+     regex: /^user/(\d+)$/g },
+  route: 'user/view' }
+
+2014-12-10T09:56:42.915Z
+at Type.Router_add [as add] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/router.js:85:16)
+'Router.add: route' { pattern: 'user/<id:(\\d+)>',
+  route: 'user/view',
+  method: [ 'GET' ] }
+
+2014-12-10T09:56:42.916Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:53:21)
+'route' 'test/forward'
+
+2014-12-10T09:56:42.916Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:110:21)
+'RouteRule' { escapePattern: [],
+  escapeRule: [],
+  escapedTemplate: 'test/forward',
+  template: 'test/forward',
+  paramRules: [],
+  routeParams: [],
+  routeRule: null,
+  method: undefined,
+  pattern: { group: false, regex: /^test/forward$/g },
+  route: 'test/forward' }
+
+2014-12-10T09:56:42.916Z
+at Type.Router_add [as add] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/router.js:85:16)
+'Router.add: route' { pattern: 'test/forward',
+  route: 'test/forward',
+  method: [ 'GET' ] }
+
+2014-12-10T09:56:42.917Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:53:21)
+'route' 'test/redirect'
+
+2014-12-10T09:56:42.917Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:110:21)
+'RouteRule' { escapePattern: [],
+  escapeRule: [],
+  escapedTemplate: 'test/redirect',
+  template: 'test/redirect',
+  paramRules: [],
+  routeParams: [],
+  routeRule: null,
+  method: undefined,
+  pattern: { group: false, regex: /^test/redirect$/g },
+  route: 'test/redirect' }
+
+2014-12-10T09:56:42.917Z
+at Type.Router_add [as add] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/router.js:85:16)
+'Router.add: route' { pattern: 'test/redirect',
+  route: 'test/redirect',
+  method: [ 'GET' ] }
+
+2014-12-10T09:56:42.918Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:53:21)
+'route' 'test/nodata'
+
+2014-12-10T09:56:42.918Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:110:21)
+'RouteRule' { escapePattern: [],
+  escapeRule: [],
+  escapedTemplate: 'test/nodata',
+  template: 'test/nodata',
+  paramRules: [],
+  routeParams: [],
+  routeRule: null,
+  method: undefined,
+  pattern: { group: false, regex: /^test/nodata$/g },
+  route: 'test/nodata' }
+
+2014-12-10T09:56:42.919Z
+at Type.Router_add [as add] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/router.js:85:16)
+'Router.add: route' { pattern: 'test/nodata',
+  route: 'test/nodata',
+  method: [ 'GET' ] }
+
+2014-12-10T09:56:42.919Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:53:21)
+'route' 'home/index'
+
+2014-12-10T09:56:42.920Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:110:21)
+'RouteRule' { escapePattern: [],
+  escapeRule: [],
+  escapedTemplate: 'home',
+  template: 'home',
+  paramRules: [],
+  routeParams: [],
+  routeRule: null,
+  method: undefined,
+  pattern: { group: false, regex: /^home$/g },
+  route: 'home/index' }
+
+2014-12-10T09:56:42.920Z
+at Type.Router_add [as add] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/router.js:85:16)
+'Router.add: route' { pattern: 'home',
+  route: 'home/index',
+  method: [ 'GET' ] }
+
+2014-12-10T09:56:42.921Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:53:21)
+'route' 'home/index'
+
+2014-12-10T09:56:42.921Z
+at Type.RouteRule [as _construct] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/routeRule.js:110:21)
+'RouteRule' { escapePattern: [],
+  escapeRule: [],
+  escapedTemplate: '',
+  template: '',
+  paramRules: [],
+  routeParams: [],
+  routeRule: null,
+  method: undefined,
+  pattern: { group: false, regex: /^$/g },
+  route: 'home/index' }
+
+2014-12-10T09:56:42.921Z
+at Type.Router_add [as add] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/router.js:85:16)
+'Router.add: route' { pattern: '/',
+  route: 'home/index',
+  method: [ 'GET' ] }
+
+2014-12-10T09:56:47.393Z
+at Server.<anonymous> (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/bootstrap.js:148:20)
+'Create new request' '/posts/create?id=1&test=redirect'
+
+2014-12-10T09:56:47.397Z
+at Type.RequestHooks_process [as process] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/hooks/request.js:88:16)
+'RequestHooks.process' '/posts/create'
+
+2014-12-10T09:56:47.406Z
+at Type.Router_parseRequest [as parseRequest] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/router.js:156:16)
+'Router.parseRequest' [ 'posts/create',
+  { id: '1', test: 'redirect' } ]
+
+2014-12-10T09:56:47.409Z
+at Type.Request_handleRoute [as _handleRoute] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/request.js:384:16)
+'LoadRequest' { controller: 
+   { _request: 
+      { redirect: [Function],
+        forward: [Function],
+        hasHeader: [Function],
+        addHeader: [Function],
+        getHeaders: [Function],
+        getMethod: [Function],
+        getRequestHeaders: [Function],
+        getRequestHeader: [Function],
+        isHeaderCacheUnModified: [Function],
+        onEnd: [Function],
+        sendNoChange: [Function],
+        createUrl: [Function],
+        parsedUrl: 
+         { protocol: null,
+           slashes: null,
+           auth: null,
+           host: null,
+           port: null,
+           hostname: null,
+           hash: null,
+           search: '?id=1&test=redirect',
+           query: { id: '1', test: 'redirect' },
+           pathname: '/posts/create',
+           path: '/posts/create?id=1&test=redirect',
+           href: '/posts/create?id=1&test=redirect' } } },
+  controllerToLoad: '@{controllersPath}/posts',
+  route: 
+   { controller: 'posts',
+     action: 'create',
+     module: undefined,
+     params: { id: '1', test: 'redirect' } } }
+
+2014-12-10T09:56:47.413Z
+at Type.ViewLoader_load [as load] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/view.js:149:20)
+'ViewLoader.load' { identifier: '/Users/igi/Github/node/mvc/test-app/app/themes/home/posts/index.twig',
+  template: '{% extends "layouts/default" %}
+{% block content %}
+<div>
+    HELLO WORLD:
+    <p>{{title}} {{id}} </p>
+</div>
+{% parent %}
+{% endblock %}',
+  cb: undefined }
+
+2014-12-10T09:56:47.417Z
+at Type.ViewLoader_load [as load] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/view.js:149:20)
+'ViewLoader.load' { identifier: '/Users/igi/Github/node/mvc/test-app/app/themes/home/layouts/default.twig',
+  template: '<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{% block content %}{% endblock %}
+</body>
+</html>',
+  cb: undefined }
+
+2014-12-10T09:56:47.418Z
+at Type.Request__render [as _render] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/request.js:265:20)
+'Request.render' '<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div>
+    HELLO WORLD:
+    <p>THIS IS AN MODEL CALL EXAMPLE 1 </p>
+</div>
+
+
+</body>
+</html>'
+
+2014-12-10T09:56:47.531Z
+at Server.<anonymous> (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/bootstrap.js:148:20)
+'Create new request' '/favicon.ico'
+
+2014-12-10T09:56:47.532Z
+at Type.RequestHooks_process [as process] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/hooks/request.js:88:16)
+'RequestHooks.process' '/favicon.ico'
+
+2014-12-10T09:56:47.533Z
+at Type.Request__render [as _render] (/Users/igi/Github/node/mvc/test-app/node_modules/mvcjs/framework/core/request.js:265:20)
+'Request.render' <Buffer 00 00 01 00 01 00 10 10 00 00 01 00 20 00 68 04 00 00 16 00 00 00 28 00 00 00 10 00 00 00 20 00 00 00 01 00 20 00 00 00 00 00 00 04 00 00 00 00 00 00 00 ...>
+

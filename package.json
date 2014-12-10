@@ -1,0 +1,34 @@
+{
+  "name" : "mvcjs-testapp",
+  "main" : "./index.js",
+  "description": "Test app",
+  "version": "0.1.0-alpha",
+  "dependencies" : {
+    "mvcjs": "0.1.0-alpha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git:/github.com/igorzg/node-mvc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/igorzg/node-mvc/issues",
+    "email": "igor.zg1987@gmail.com"
+  },
+  "homepage": "https://github.com/igorzg/node-mvc",
+  "author": {
+    "name": "Igor Ivanovic",
+    "email": "igor.zg1987@gmail.com"
+  },
+  "keywords": [
+    "mvcjs",
+    "framework",
+    "mvc"
+  ],
+  "maintainers": [
+    {
+      "name": "igorzg",
+      "email": "igor.zg1987@gmail.com"
+    }
+  ],
+  "license": "MIT"
+}

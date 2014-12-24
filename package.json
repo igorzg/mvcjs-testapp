@@ -2,9 +2,15 @@
   "name" : "mvcjs-testapp",
   "main" : "./index.js",
   "description": "Test app",
-  "version": "0.1.0-alpha",
+  "version": "0.1.0",
   "dependencies" : {
-    "mvcjs": "0.1.0-alpha"
+    "mvcjs": "0.1.0-beta-3"
+  },
+  "devDependencies": {
+    "gulp": "3.8.x",
+    "gulp-istanbul": "0.5.x",
+    "gulp-jasmine": "1.0.x",
+    "gulp-exit": "0.0.x"
   },
   "repository": {
     "type": "git",

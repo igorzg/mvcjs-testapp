@@ -1,0 +1,16 @@
+{% extends "layouts/default" %}
+{% block content %}
+<div>
+    HELLO WORLD:
+    <p>{{params}}</p>
+    <p>{{text}}</p>
+    <ul>
+        {% for key, val in menu %}
+            <li>
+                <a href="{{val}}">{{val}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% parent %}
+{% endblock %}

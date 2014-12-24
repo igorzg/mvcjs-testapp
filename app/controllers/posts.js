@@ -1,11 +1,12 @@
 var di = require('mvcjs'), // mvcjs as node package
-    Core = di.load('@{controllersPath}/core'),
+    CoreController = di.load('@{controllersPath}/core'),
     Promise = di.load('promise'),
-    Posts;
+    core = di.load('core'),
+    PostController;
 
 
 
-Posts = Core.inherit({}, {
+PostController = CoreController.inherit({}, {
     before_create: function Posts_beforecreate(params) {
         // example model call
         return new Promise(function (resolve, reject) {
@@ -17,17 +18,15 @@ Posts = Core.inherit({}, {
     },
     action_create: function Core_create(params, data) {
         // currently
-
-        return this.renderFile('posts/index', params);
-    },
-    after_create: function (params, data) {
+        core.extend(this.locals, params);
+        core.extend(this.locals, data);
 
 
-        return data;
+
+
+        return this.renderFile('posts/index', this.locals);
     }
-
-
 });
 
 
-module.exports = Posts;
+module.exports = PostController;

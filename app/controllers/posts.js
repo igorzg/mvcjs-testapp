@@ -18,10 +18,6 @@ PostController = CoreController.inherit({}, {
     },
     action_create: function Core_create(params, data) {
         // currently
-        core.extend(this.locals, params);
-        core.extend(this.locals, data);
-
-
 
 
         return this.renderFile('posts/index', this.locals);

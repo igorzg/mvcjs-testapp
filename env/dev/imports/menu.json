@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Home",
+    "link": "/",
+    "alt": "",
+    "route": "",
+    "blank": false
+  },
+  {
+    "title": "Logger",
+    "link": "http://localhost:9001/",
+    "alt": "",
+    "route": "",
+    "blank": true
+  },
+  {
+    "title": "Error handling",
+    "link": "/error/handler",
+    "alt": "",
+    "route": "home/handleError",
+    "blank": false
+  },
+  {
+    "title": "Routing",
+    "link": "/getting-started/routing",
+    "alt": "",
+    "route": "home/content",
+    "blank": false
+  }
+]

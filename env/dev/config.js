@@ -5,31 +5,22 @@
 module.exports = function (componet, di) {
     "use strict";
     var viewLoader,
-        router,
         logger = componet.get('core/logger'),
         loggerModel = di.load('@{modelsPath}/logger');
 
+    // attach core path
+    di.setAlias('core', '@{appPath}/core');
+    // set widgets path
+    di.setAlias('widgets', '@{viewsPath}/widgets');
+
+    // set theme for view loader
     viewLoader = componet.get('core/view');
     viewLoader.setTheme('default');
-
     // bind logger hook
     logger.addHook(loggerModel.save.bind(loggerModel));
 
-    router = componet.get('core/router');
-    router.add([
-        {
-            pattern: 'home/<action>',
-            route: 'home/<action>'
-        },
-        {
-            pattern: 'posts/<action:(create|update|delete)>',
-            route: 'posts/<action>',
-            method: ['GET', 'POST']
-        }
-    ]);
 
-    router.add({
-        pattern: '/',
-        route: 'home/index'
-    });
+    di.load('@{envPath}/widget')(componet, di);
+    di.load('@{envPath}/router')(componet, di);
+    di.load('@{envPath}/import')(componet, di);
 };

@@ -1,6 +1,4 @@
-/**
- * Created by igi on 23/12/14.
- */
+"use strict";
 var di = require('mvcjs'),
     Type = di.load('typejs'),
     component = di.load('core/component'),

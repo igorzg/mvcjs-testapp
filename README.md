@@ -4,6 +4,12 @@ Mvcjs test app
 
 Mvcjs is powerful lightweight mvc framework for nodejs inspired by [Yii](http://www.yiiframework.com/)
 
+Requirements for running demo app
+====
+1. nodejs
+2. gulp
+3. mongodb
+
 Getting started
 ====
 1. Clone demo app

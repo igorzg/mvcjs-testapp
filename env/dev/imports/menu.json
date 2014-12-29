@@ -15,21 +15,28 @@
   },
   {
     "title": "Logger",
-    "link": "/getting-started/logger",
+    "link": "/guide/logger",
     "alt": "",
     "route": "home/content",
     "blank": false
   },
   {
     "title": "Routing",
-    "link": "/getting-started/routing",
+    "link": "/guide/routing",
     "alt": "",
     "route": "home/content",
     "blank": false
   },
   {
     "title": "Components",
-    "link": "/getting-started/components",
+    "link": "/guide/components",
+    "alt": "",
+    "route": "home/content",
+    "blank": false
+  },
+  {
+    "title": "Controllers",
+    "link": "/guide/controllers",
     "alt": "",
     "route": "home/content",
     "blank": false

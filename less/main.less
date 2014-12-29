@@ -5,6 +5,24 @@
 
 * {
   .box-sizing();
+
+}
+.mv-cf:before,
+.mv-cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.mv-cf:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.mv-cf {
+  *zoom: 1;
 }
 
 .mv-head {
@@ -42,6 +60,15 @@
 .mv-content {
   max-width: 1200px;
   padding: 20px 50px 20px 50px;
+  .mv-content-left {
+    width: 70%;
+    float: left;
+    padding-right: 10px;
+  }
+  .mv-content-right {
+    width: 30%;
+    float: left;
+  }
   h1.mv-brand {
     display: block;
     font: 4.5em "Helvetica Neue", "Open Sans", sans-serif;
@@ -54,7 +81,7 @@
     top: -5px;
     font: 100 4.2em "Helvetica Neue", "Open Sans", sans-serif;
     color: #aeaeae;
-    line-height: .75;
+    line-height: 0.95;
   }
   h1.mv-h1 {
     margin: 5px 0;
@@ -85,7 +112,7 @@
     min-height: 200px;
     border: 1px solid #eee;
   }
-  .github-button{
+  .github-button {
     display: none;
   }
   .mv-command {

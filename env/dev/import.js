@@ -22,5 +22,7 @@ module.exports = function (componet, di) {
 
     //var util = require('util');
     //var article = util.inspect(di.readFileSync('@{basePath}/coverage/article.html'));
+    //article = article.replace(/\\\'/g, "'");
+    //article = article.replace(/"/g, '\\"');
     //console.log(article);
 };

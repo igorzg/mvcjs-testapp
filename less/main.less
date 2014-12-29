@@ -2,9 +2,11 @@
 @import 'mixins.less';
 @import 'font-awesome/font-awesome.less';
 @import 'prism.less';
+
 * {
-   .box-sizing();
+  .box-sizing();
 }
+
 .mv-head {
   background: #eee;
   height: 50px;
@@ -17,12 +19,12 @@
     margin-top: 12px;
     display: inline-block;
     li {
-      display:inline-block;
+      display: inline-block;
       list-style: none;
 
       padding: 0 10px 0 10px;
 
-      &:hover{
+      &:hover {
         a {
           color: #000;
         }
@@ -37,44 +39,54 @@
   }
 }
 
-.mv-content{
+.mv-content {
   max-width: 1200px;
   padding: 20px 50px 0px 50px;
-  h1.mv-brand{
+  h1.mv-brand {
     display: block;
-    font: 4.5em "Helvetica Neue","Open Sans",sans-serif;
+    font: 4.5em "Helvetica Neue", "Open Sans", sans-serif;
     font-weight: 100;
     color: #353535;
     margin-bottom: .25em;
   }
-  h2.mv-brand{
+  h2.mv-brand {
     position: relative;
     top: -5px;
-    font: 100 4.2em "Helvetica Neue","Open Sans",sans-serif;
+    font: 100 4.2em "Helvetica Neue", "Open Sans", sans-serif;
     color: #aeaeae;
     line-height: .75;
   }
-  h1.mv-h1{
+  h1.mv-h1 {
     margin: 5px 0;
     color: #353535;
     font-size: 35px;
   }
-  h2.mv-h2{
+  h2.mv-h2 {
     margin: 5px 0;
     color: #353535;
     font-size: 25px;
     font-weight: normal;
   }
+  .mv-a {
+    text-decoration: none;
+    color: #1d3299;
+  }
   .mv-p {
     font-size: 14px;
   }
-  .mv-ul{
+  .mv-ul {
     margin-left: 20px;
     font-size: 14px;
   }
-  .mv-command{
+  .mv-frame {
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    border: 1px solid #eee;
+  }
+  .mv-command {
     margin-top: 20px;
-    font-family: Consolas,Monaco,"Andale Mono",monospace;
+    font-family: Consolas, Monaco, "Andale Mono", monospace;
     padding: 5px 10px;
     background: #fff;
     border: 1px solid #eee;

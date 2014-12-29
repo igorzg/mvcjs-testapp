@@ -8,10 +8,10 @@
   },
   {
     "title": "Logger",
-    "link": "http://localhost:9001/",
+    "link": "/logger",
     "alt": "",
-    "route": "",
-    "blank": true
+    "route": "home/logger",
+    "blank": false
   },
   {
     "title": "Error handling",

@@ -1,0 +1,9 @@
+{% extends "layouts/default" %}
+{% block content %}
+<div class="mv-content">
+    <h1 class="mv-h1">Logger</h1>
+    <p>View logger in <a href="http://localhost:9001/" target="_blank" class="mv-a">new page</a>. </p>
+    <iframe src="http://localhost:9001/" class="mv-frame"></iframe>
+</div>
+{% parent %}
+{% endblock %}

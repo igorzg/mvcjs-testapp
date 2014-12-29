@@ -17,7 +17,7 @@ MenuRoute = RouteRuleInterface.inherit({}, {
             });
         });
     },
-    createUrl: function() {
+    createUrl: function(route, params) {
 
     }
 });

@@ -23,6 +23,9 @@ HomeController = CoreController.inherit({}, {
             });
         });
     },
+    action_logger: function HomeController_content(params, data) {
+        return this.renderFile('home/logger', this.locals);
+    },
     action_content: function HomeController_content(params, data) {
         this.locals.scripts.push({
             src: '/assets/js/prism.js'

@@ -4,7 +4,7 @@
   "description": "Test app",
   "version": "0.1.0",
   "dependencies" : {
-    "mvcjs": "0.1.0-beta-8"
+    "mvcjs": "0.1.0-beta-9"
   },
   "devDependencies": {
     "gulp": "3.8.x",

@@ -25,12 +25,17 @@ HomeController = CoreController.inherit({}, {
      * @return {*|string}
      */
     action_index: function HomeController_action_index(params, data) {
+        var packageJson = JSON.parse(di.readFileSync('@{basePath}/package.json'));
         this.locals.scripts.push({
             src: 'https://buttons.github.io/buttons.js',
             id: 'github-bjs',
             async: true,
             defer: true
         });
+        if (packageJson && packageJson.dependencies && packageJson.dependencies.mvcjs) {
+            this.locals.version = packageJson.dependencies.mvcjs;
+        }
+
         return this.renderFile('home/index', this.locals);
     },
 

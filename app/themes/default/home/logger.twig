@@ -3,6 +3,19 @@
 <div class="mv-content">
     <h1 class="mv-h1">Logger</h1>
     <p>View logger in <a href="http://localhost:9001/" target="_blank" class="mv-a">new page</a>. </p>
+    <code class="language-json">
+        "components": [
+            {
+            "name": "core/logger", // name of component
+            "enabled": true, // is logger enabled
+            "write": true, // should be written to disk ?
+            "publish": true, // publish to port 9001
+            "console": false, // log it in console
+            "port": 9001, // log publish port
+            "file": "server.log" // log file
+            },
+        ]
+    </code>
     <iframe src="http://localhost:9001/" class="mv-frame"></iframe>
 </div>
 {% parent %}

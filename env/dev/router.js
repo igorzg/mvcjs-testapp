@@ -1,7 +1,12 @@
 /**
- * Created by igi on 25/12/14.
+ * @license Mit Licence 2014
+ * @since 0.0.1
+ * @author Igor Ivanovic
+ * @name router.js
+ * @function
+ * @description
+ * Is used to do route configuration at bootstrap
  */
-
 module.exports = function (componet, di) {
 
     var router = componet.get('core/router');

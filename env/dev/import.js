@@ -1,7 +1,12 @@
 /**
- * Created by igi on 25/12/14.
+ * @license Mit Licence 2014
+ * @since 0.0.1
+ * @author Igor Ivanovic
+ * @name import.js
+ * @function
+ * @description
+ * Is used to do imports in system by framework on bootstrap
  */
-
 module.exports = function (componet, di) {
 
     // import menu at bootstrap

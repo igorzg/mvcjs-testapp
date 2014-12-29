@@ -1,7 +1,12 @@
 /**
- * Created by igi on 25/12/14.
+ * @license Mit Licence 2014
+ * @since 0.0.1
+ * @author Igor Ivanovic
+ * @name widget.js
+ * @function
+ * @description
+ * Is used to extend view so we can support widgets
  */
-
 module.exports = function (componet, di) {
 
     var viewLoader = componet.get('core/view'),

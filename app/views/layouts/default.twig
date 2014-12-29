@@ -7,10 +7,11 @@
         <script src="{{ item.src }}" {% if item.id %}id="{{ item.id }}"{% endif %}  {% if item.async %}async{% endif %} {% if item.defer %}defer{% endif %}></script>
     {% endfor %}
     <title>{{pageTitle}}</title>
+    <meta name="description" content="{{pageDesc}}" />
 </head>
 <body>
     <header class="mv-head">
-        <span class="mv-title fa fa-lg fa-code">{{title}}</span>
+        <span class="mv-title fa fa-lg fa-code">{{brand}}</span>
         {% widget 'menu' %}
     </header>
     {% block content %}{% endblock %}

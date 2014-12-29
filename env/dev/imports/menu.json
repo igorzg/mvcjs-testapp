@@ -7,17 +7,17 @@
     "blank": false
   },
   {
-    "title": "Logger",
-    "link": "/logger",
-    "alt": "",
-    "route": "home/logger",
-    "blank": false
-  },
-  {
     "title": "Error handling",
     "link": "/error/handler",
     "alt": "",
     "route": "home/handleError",
+    "blank": false
+  },
+  {
+    "title": "Logger",
+    "link": "/getting-started/logger",
+    "alt": "",
+    "route": "home/content",
     "blank": false
   },
   {
@@ -29,7 +29,7 @@
   },
   {
     "title": "Components",
-    "link": "/components",
+    "link": "/getting-started/components",
     "alt": "",
     "route": "home/content",
     "blank": false

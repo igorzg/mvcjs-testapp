@@ -15,7 +15,7 @@ var di = require('mvcjs'),
  *
  * @constructor
  * @description
- * WidgetHook
+ * WidgetHook is responsible for serving widget data in templates
  */
 WidgetHook = Type.create({
         hooks: Type.ARRAY
@@ -24,14 +24,13 @@ WidgetHook = Type.create({
         _construct: function MenuWidget_construct() {
             this.hooks = [];
         },
-
         /**
          * @since 0.0.1
          * @author Igor Ivanovic
          * @method WidgetHook#load
          *
          * @description
-         * Load widget
+         * Load widgets
          */
         load: function MenuWidget_load(widget, hookName, widgetMethod) {
             var path = di.normalizePath('@{widgets}/' + widget),
@@ -60,7 +59,7 @@ WidgetHook = Type.create({
          * @method WidgetHook#promise
          *
          * @description
-         * It will create promise
+         * Create an promise
          */
         promise: function (callback) {
             return new Promise(function (resolve, reject) {
@@ -77,7 +76,7 @@ WidgetHook = Type.create({
          * @method WidgetHook#handle
          *
          * @description
-         * It will handle hooks
+         * Handle hooks
          */
         handle: function MenuWidget_parse(names) {
             var hooks = [];

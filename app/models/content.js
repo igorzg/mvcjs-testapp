@@ -24,6 +24,8 @@ ContentModel = Type.create({
             var schema = mongo.schema({
                 created: Date,
                 text: String,
+                pageTitle: String,
+                pageDesc: String,
                 url: String
             }, {
                 collection: 'content'
@@ -42,7 +44,7 @@ ContentModel = Type.create({
             var that = this;
             this.model.collection.drop(function() {
                 docs.forEach(function importData(item) {
-                    that.save(item.text, item.url);
+                    that.save(item.text, item.url, item.pageTitle, item.pageDesc);
                 });
             });
         },
@@ -76,10 +78,12 @@ ContentModel = Type.create({
          * @description
          * Save menu
          */
-        save: function(text, url) {
+        save: function(text, url, pageTitle, pageDesc) {
             return this.model.create({
                 text: text,
                 url: url,
+                pageTitle: pageTitle,
+                pageDesc: pageDesc,
                 created: new Date
             });
         }

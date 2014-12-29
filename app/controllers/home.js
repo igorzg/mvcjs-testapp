@@ -4,17 +4,27 @@ var di = require('mvcjs'), // mvcjs as node package
     core = di.load('core'),
     Promise = di.load('promise'),
     HomeController;
-
-
+/**
+ * @license Mit Licence 2014
+ * @since 0.0.1
+ * @author Igor Ivanovic
+ * @name HomeController
+ *
+ * @constructor
+ * @description
+ * Home controller is responsible for home actions
+ */
 HomeController = CoreController.inherit({}, {
     /**
-     * action index
-     * @param params
-     * @param data
-     * @returns {*|string}
-     * @constructor
+     * @since 0.0.1
+     * @author Igor Ivanovic
+     * @method HomeController#action_index
+     *
+     * @description
+     * Index action request
+     * @return {*|string}
      */
-    action_index: function Core_create(params, data) {
+    action_index: function HomeController_action_index(params, data) {
         this.locals.scripts.push({
             src: 'https://buttons.github.io/buttons.js',
             id: 'github-bjs',
@@ -25,33 +35,31 @@ HomeController = CoreController.inherit({}, {
     },
 
     /**
-     * Before each action
-     * @returns {*}
+     * @since 0.0.1
+     * @author Igor Ivanovic
+     * @method HomeController#beforeEach
+     *
+     * @description
+     * This is executed before each action
+     * @return {object} Promise
      */
-    beforeEach: function () {
-        var _super = this._super();
+    beforeEach: function HomeController_beforeEach() {
+        var _parentBeforeEachPromise = this._super();
         this.locals.scripts.push({
             src: '/assets/js/prism.js'
         });
-        return _super;
+        return _parentBeforeEachPromise;
     },
     /**
-     * Action logger
-     * @param params
-     * @param data
-     * @returns {*|string}
-     * @constructor
+     * @since 0.0.1
+     * @author Igor Ivanovic
+     * @method HomeController#before_content
+     *
+     * @description
+     * Before content action do some data handling
+     * @return {object} Promise
      */
-    action_logger: function HomeController_content(params, data) {
-        return this.renderFile('home/logger', this.locals);
-    },
-    /**
-     * Before content
-     * @param params
-     * @param data
-     * @returns {Promise}
-     */
-    before_content: function (params, data) {
+    before_content: function HomeController_before_content(params, data) {
         var pathName = this._request.parsedUrl.pathname;
         return new Promise(function(resolve, reject) {
             contentModel.findOne({url: pathName}, function (err, data) {
@@ -64,15 +72,25 @@ HomeController = CoreController.inherit({}, {
         });
     },
     /**
-     * Action content
-     * @param params
-     * @param data
-     * @returns {*|string}
-     * @constructor
+     * @since 0.0.1
+     * @author Igor Ivanovic
+     * @method HomeController#action_content
+     *
+     * @description
+     * Content action is responsible for displaying dynamic content
+     * @return {*|string}
      */
     action_content: function HomeController_content(params, data) {
-        if (data && data.text) {
-            this.locals.content = data.text;
+        if (data) {
+            if (data.text) {
+                this.locals.content = data.text;
+            }
+            if (data.pageTitle) {
+                this.locals.pageTitle = data.pageTitle;
+            }
+            if (data.pageDesc) {
+                this.locals.pageDesc = data.pageDesc;
+            }
         }
         return this.renderFile('home/content', this.locals);
     }

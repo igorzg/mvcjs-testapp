@@ -1,7 +1,12 @@
 /**
- * Created by igi on 06/11/14.
+ * @license Mit Licence 2014
+ * @since 0.0.1
+ * @author Igor Ivanovic
+ * @name config.js
+ * @function
+ * @description
+ * Is used to do configuration at bootstrap
  */
-
 module.exports = function (componet, di) {
     "use strict";
     var viewLoader,

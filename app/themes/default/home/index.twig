@@ -1,9 +1,29 @@
 {% extends "layouts/default" %}
 {% block content %}
-<div class="mv-content">
-    <h1 class="mv-brand">MVC JS</h1>
-    <h2 class="mv-brand">Fast, opinionated lightweight mvc framework for Node.js</h2>
-    <div class="mv-command">$ npm install mvcjs</div>
-</div>
-{% parent %}
+    <div class="mv-content">
+        <h1 class="mv-brand">MVC JS 0.1.0-beta-7</h1>
+
+        <h2 class="mv-brand">Fast, opinionated lightweight mvc framework for Node.js</h2>
+
+        <div class="mv-command">$ npm install mvcjs</div>
+        <p class="mv-p">
+            Bulid status:
+            <div>
+                <a href="https://travis-ci.org/igorzg/node-mvc" target="_blank" class="mv-a">
+                    <img src="https://api.travis-ci.org/igorzg/node-mvc.svg?branch=master"/>
+                </a>
+            </div>
+        </p>
+
+        <p class="mv-p">
+            Follow us on github:
+
+            <div>
+                <a class="github-button" href="https://github.com/igorzg/node-mvc" data-icon="octicon-eye">Watch</a>
+                <a class="github-button" href="https://github.com/igorzg/node-mvc" data-icon="octicon-star">Star</a>
+                <a class="github-button" href="https://github.com/igorzg/node-mvc" data-icon="octicon-git-branch">Fork</a>
+            </div>
+        </p>
+    </div>
+    {% parent %}
 {% endblock %}

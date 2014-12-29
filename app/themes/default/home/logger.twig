@@ -4,7 +4,7 @@
     <h1 class="mv-h1">Logger</h1>
     <p>Logger is component in system, see more about <a href="/components"  class="mv-a">components</a>.</p>
 
-    <code class="language-json">
+    <code class="language-javascript">
         "components": [
             {
             "name": "core/logger", // name of component
@@ -22,7 +22,7 @@
     <p>View logger in <a href="http://localhost:9001/" target="_blank" class="mv-a">new page</a>. </p>
     <h2 class="mv-h2">Logger hooks</h2>
     <p>Add logger hook in env config to store in db:</p>
-    <code class="language-json">
+    <code class="language-javascript">
         module.exports = function (componet, di) {
             "use strict";
             var viewLoader,
@@ -34,7 +34,7 @@
 
     <h2 class="mv-h2">How to use logger ?</h2>
     <p>Load logger in to your controller/model/component</p>
-    <code class="language-json">
+    <code class="language-javascript">
         var di = require('mvcjs'), // mvcjs as node package
             component = di.load('core/component'),
             logger = component.get('core/logger');

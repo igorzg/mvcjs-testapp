@@ -12,7 +12,9 @@ CoreController = Controller.inherit({
     menu: Type.ARRAY
 }, {
     _construct: function() {
-        this.locals = {};
+        this.locals = {
+            scripts: []
+        };
         this.menu = [];
     },
     beforeEach: function Core_beforeEach() {

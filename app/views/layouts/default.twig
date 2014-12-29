@@ -3,6 +3,9 @@
 <head lang="en">
     <meta charset="UTF-8">
     <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+    {% for item in scripts %}
+        <script src="{{ item.src }}"></script>
+    {% endfor %}
     <title>{{pageTitle}}</title>
 </head>
 <body>

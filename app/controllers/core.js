@@ -27,7 +27,7 @@ CoreController = Controller.inherit({
     action_error: function Core_error(error) {
         // currently
         this.locals.pageTitle = 'Error';
-        this.locals.text = 'Error at:'  + error;
+        this.locals.text = error.toString().replace(/\\n/g, '\n');
 
         return this.renderFile('home/error', this.locals);
     }

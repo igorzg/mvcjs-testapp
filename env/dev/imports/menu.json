@@ -26,5 +26,12 @@
     "alt": "",
     "route": "home/content",
     "blank": false
+  },
+  {
+    "title": "Components",
+    "link": "/components",
+    "alt": "",
+    "route": "home/content",
+    "blank": false
   }
 ]

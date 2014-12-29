@@ -71,8 +71,9 @@ HomeController = CoreController.inherit({}, {
      * @constructor
      */
     action_content: function HomeController_content(params, data) {
-
-        this.locals.content = data.text;
+        if (data && data.text) {
+            this.locals.content = data.text;
+        }
         return this.renderFile('home/content', this.locals);
     }
 });

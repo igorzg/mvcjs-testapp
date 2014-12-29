@@ -16,6 +16,6 @@ module.exports = function (componet, di) {
 
 
     //var util = require('util');
-    // var article = util.inspect(di.readFileSync('@{basePath}/coverage/article.html'));
+    //var article = util.inspect(di.readFileSync('@{basePath}/coverage/article.html'));
     //console.log(article);
 };

@@ -29,8 +29,7 @@ HomeController = CoreController.inherit({}, {
         this.locals.scripts.push({
             src: 'https://buttons.github.io/buttons.js',
             id: 'github-bjs',
-            async: true,
-            defer: true
+            async: true
         });
         if (packageJson && packageJson.dependencies && packageJson.dependencies.mvcjs) {
             this.locals.version = packageJson.dependencies.mvcjs;

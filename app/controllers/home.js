@@ -1,7 +1,6 @@
 var di = require('mvcjs'), // mvcjs as node package
     CoreController = di.load('@{controllersPath}/core'),
     contentModel = di.load('@{modelsPath}/content'),
-    core = di.load('core'),
     Promise = di.load('promise'),
     HomeController;
 /**

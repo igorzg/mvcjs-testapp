@@ -64,6 +64,8 @@ CoreController = Controller.inherit({
         this.locals.pageTitle = 'Error - mvcjs nodejs framework';
         this.locals.text = error.toString().replace(/\\n/g, '\n');
 
+        this.setStatusCode(error.code);
+
         return this.renderFile('home/error', this.locals);
     }
 });

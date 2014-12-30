@@ -16,4 +16,5 @@ Getting started
 2. npm install --save-dev
 3. gulp less-dev
 4. node index
+5. open http://localhost:9000/ to see app
 

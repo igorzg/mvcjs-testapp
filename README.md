@@ -1,6 +1,10 @@
 Mvcjs test app
 =====
+MVCJS build:
 [![Build Status](https://api.travis-ci.org/igorzg/node-mvc.svg?branch=master)](https://travis-ci.org/igorzg/node-mvc)
+
+Demo app build:
+[![Build Status](https://travis-ci.org/igorzg/mvcjs-testapp.svg?branch=master)](https://travis-ci.org/igorzg/mvcjs-testapp)
 
 Mvcjs is powerful lightweight mvc framework for nodejs inspired by [Yii](http://www.yiiframework.com/)
 

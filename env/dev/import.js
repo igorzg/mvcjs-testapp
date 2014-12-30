@@ -25,5 +25,5 @@ module.exports = function (componet, di) {
     article = article.replace(/\\\'/g, "'");
     article = article.replace(/"/g, '\\"');
     console.log(article);
-    */
+    //*/
 };

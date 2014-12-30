@@ -40,5 +40,26 @@
     "alt": "",
     "route": "home/content",
     "blank": false
+  },
+  {
+    "title": "Models",
+    "link": "/guide/models",
+    "alt": "",
+    "route": "home/content",
+    "blank": false
+  },
+  {
+    "title": "Views",
+    "link": "/guide/views",
+    "alt": "",
+    "route": "home/content",
+    "blank": false
+  },
+  {
+    "title": "TDD",
+    "link": "/guide/tdd",
+    "alt": "",
+    "route": "home/content",
+    "blank": false
   }
 ]

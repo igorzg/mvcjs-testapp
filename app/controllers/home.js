@@ -63,7 +63,7 @@ HomeController = CoreController.inherit({}, {
      * @return {object} Promise
      */
     before_content: function HomeController_before_content(params, data) {
-        var pathName = this._request.parsedUrl.pathname;
+        var pathName = this.getParsedUrl().pathname;
         return new Promise(function(resolve, reject) {
             contentModel.findOne({url: pathName}, function (err, data) {
                 if (err) {

@@ -37,7 +37,7 @@ describe('controllers/home', function () {
             'typejs': Type,
             'promise': di.load('promise'),
             '@{controllersPath}/core': Core,
-            '@{modelsPath}/content': widgetHook
+            '@{modelsPath}/content': contentModel
         });
     });
 
@@ -49,6 +49,124 @@ describe('controllers/home', function () {
         expect(controller.locals.pageTitle).toBe('Mvcjs nodejs framework');
         expect(controller.locals.pageDesc).toBe('Mvcjs fast, opinionated lightweight mvc framework for Node.js inspired by Yii framework');
         expect(controller.menu.length).toBe(0);
+    });
+
+
+    it('action_index', function () {
+        var api = {
+            locals: {
+                scripts: []
+            },
+            renderFile: function(route, locals) {
+                return 'RENDERED';
+            }
+        };
+        spyOn(api, 'renderFile').and.callThrough();
+        di.setAlias('basePath', __dirname + '/../../');
+        var controller = new Home(api);
+        var result = controller.action_index.call(api);
+
+        expect(api.renderFile).toHaveBeenCalledWith( 'home/index', {
+            scripts : [ {
+                src : 'https://buttons.github.io/buttons.js',
+                id : 'github-bjs',
+                async : true
+            } ],
+            version : '0.1.0-beta-15'
+        });
+        expect(result).toBe('RENDERED');
+        expect(api.locals.scripts.length).toBe(1);
+    });
+
+
+    it('action_content', function () {
+        var api = {
+            locals: {
+                content: '',
+                pageTitle: '',
+                pageDesc: ''
+            },
+            renderFile: function(route, locals) {
+                return 'RENDERED';
+            }
+        };
+        spyOn(api, 'renderFile').and.callThrough();
+        di.setAlias('basePath', __dirname + '/../../');
+        var controller = new Home(api);
+        var result = controller.action_content.call(api, {}, {
+            text: 'TEXT',
+            pageTitle: 'TITLE',
+            pageDesc: 'DESC'
+        });
+        expect(api.renderFile).toHaveBeenCalledWith( 'home/content', {
+            pageTitle: 'TITLE',
+            pageDesc: 'DESC',
+            content : 'TEXT'
+        });
+        expect(result).toBe('RENDERED');
+    });
+
+    it('before_content', function (done) {
+        var api = {
+            getParsedUrl: function(route, locals) {
+                return {
+                    pathname: '/home/index'
+                };
+            }
+        };
+        contentModel.findOne = function(data, callback) {
+            expect(data.url).toBe('/home/index');
+            callback(null, {
+                id: 1,
+                text: 'yes'
+            });
+        };
+
+        spyOn(api, 'getParsedUrl').and.callThrough();
+        spyOn(contentModel, 'findOne').and.callThrough();
+
+        di.setAlias('basePath', __dirname + '/../../');
+        var controller = new Home(api);
+        var result = controller.before_content.call(api);
+
+
+        result.then(function(data) {
+            expect(api.getParsedUrl).toHaveBeenCalled();
+            expect(contentModel.findOne).toHaveBeenCalled();
+            expect(data.id).toBe(1);
+            expect(data.text).toBe('yes');
+            done();
+        });
+    });
+
+
+    it('before_content error', function (done) {
+        var api = {
+            getParsedUrl: function(route, locals) {
+                return {
+                    pathname: '/home/index'
+                };
+            }
+        };
+        contentModel.findOne = function(data, callback) {
+            expect(data.url).toBe('/home/index');
+            callback(true, {
+                id: 1,
+                text: 'yes'
+            });
+        };
+
+        spyOn(api, 'getParsedUrl').and.callThrough();
+        spyOn(contentModel, 'findOne').and.callThrough();
+
+        di.setAlias('basePath', __dirname + '/../../');
+        var controller = new Home(api);
+        var result = controller.before_content.call(api);
+
+        result.then(null, function(error) {
+            console.log('error', error);
+            done();
+        });
     });
 
     it('beforeEach', function () {

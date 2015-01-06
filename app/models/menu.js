@@ -19,7 +19,7 @@ MenuModel = Type.create({
         model: Type.FUNCTION
     },
     {
-        _construct: function() {
+        _construct: function MenuModel_construct() {
 
             var schema = mongo.schema({
                 created: Date,
@@ -41,7 +41,7 @@ MenuModel = Type.create({
          * @description
          * Import documents from array
          */
-        importData: function(docs) {
+        importData: function MenuModel_importData(docs) {
             var that = this;
             this.model.collection.drop(function() {
                 docs.forEach(function importData(item) {
@@ -57,7 +57,7 @@ MenuModel = Type.create({
          * @description
          * Save menu
          */
-        findOne: function () {
+        findOne: function MenuModel_findOne() {
             return this.model.findOne.apply(this.model, arguments);
         },
         /**
@@ -68,7 +68,7 @@ MenuModel = Type.create({
          * @description
          * Save menu
          */
-        find: function () {
+        find: function MenuModel_find() {
             return this.model.find.apply(this.model, arguments);
         },
         /**
@@ -79,7 +79,7 @@ MenuModel = Type.create({
          * @description
          * Save menu
          */
-        save: function(title, link, alt, route, blank) {
+        save: function MenuModel_save(title, link, alt, route, blank) {
             return this.model.create({
                 title: title,
                 link: link,

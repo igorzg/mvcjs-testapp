@@ -16,7 +16,7 @@ describe('controllers/core', function () {
         };
     beforeEach(function () {
         di = require('mvcjs');
-        di.setAlias('cp', __dirname + '/../../app/controllers/');
+        di.setAlias('cp', __dirname + '/../../../app/controllers/');
         Type = di.load('typejs');
         Core = di.mock('@{cp}/core', {
             'typejs': Type,

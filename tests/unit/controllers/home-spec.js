@@ -22,7 +22,7 @@ describe('controllers/home', function () {
         };
     beforeEach(function () {
         di = require('mvcjs');
-        di.setAlias('cp', __dirname + '/../../app/controllers/');
+        di.setAlias('cp', __dirname + '/../../../app/controllers/');
         Type = di.load('typejs');
         Core = di.mock('@{cp}/core', {
             'typejs': Type,
@@ -62,7 +62,7 @@ describe('controllers/home', function () {
             }
         };
         spyOn(api, 'renderFile').and.callThrough();
-        di.setAlias('basePath', __dirname + '/../../');
+        di.setAlias('basePath', __dirname + '/../../../');
         var controller = new Home(api);
         var result = controller.action_index.call(api);
 
@@ -72,7 +72,7 @@ describe('controllers/home', function () {
                 id : 'github-bjs',
                 async : true
             } ],
-            version : '0.1.0-beta-15'
+            version : '0.1.0-beta-17'
         });
         expect(result).toBe('RENDERED');
         expect(api.locals.scripts.length).toBe(1);
@@ -91,7 +91,7 @@ describe('controllers/home', function () {
             }
         };
         spyOn(api, 'renderFile').and.callThrough();
-        di.setAlias('basePath', __dirname + '/../../');
+        di.setAlias('basePath', __dirname + '/../../../');
         var controller = new Home(api);
         var result = controller.action_content.call(api, {}, {
             text: 'TEXT',
@@ -125,7 +125,7 @@ describe('controllers/home', function () {
         spyOn(api, 'getParsedUrl').and.callThrough();
         spyOn(contentModel, 'findOne').and.callThrough();
 
-        di.setAlias('basePath', __dirname + '/../../');
+        di.setAlias('basePath', __dirname + '/../../../');
         var controller = new Home(api);
         var result = controller.before_content.call(api);
 
@@ -159,12 +159,12 @@ describe('controllers/home', function () {
         spyOn(api, 'getParsedUrl').and.callThrough();
         spyOn(contentModel, 'findOne').and.callThrough();
 
-        di.setAlias('basePath', __dirname + '/../../');
+        di.setAlias('basePath', __dirname + '/../../../');
         var controller = new Home(api);
         var result = controller.before_content.call(api);
 
         result.then(null, function(error) {
-            console.log('error', error);
+            expect(error).toBe(true);
             done();
         });
     });

@@ -14,6 +14,19 @@ var di = require('mvcjs'), // mvcjs as node package
  * Home controller is responsible for home actions
  */
 HomeController = CoreController.inherit({}, {
+
+    /**
+     * @since 0.0.1
+     * @author Igor Ivanovic
+     * @method HomeController#action_forward
+     *
+     * @description
+     * Forward action
+     * @return {*|string}
+     */
+    action_forward: function HomeController_forward(params, data) {
+        return this.forward(this.createUrl('home/index'), params);
+    },
     /**
      * @since 0.0.1
      * @author Igor Ivanovic

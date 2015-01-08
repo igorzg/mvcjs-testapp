@@ -24,7 +24,8 @@ module.exports = function (componet, di) {
 
     router.add({
         pattern: '/',
-        route: 'home/index'
+        route: 'home/index',
+        method: ['GET', 'POST']
     });
 
 };

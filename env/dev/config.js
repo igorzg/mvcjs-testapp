@@ -7,12 +7,14 @@
  * @description
  * Is used to do configuration at bootstrap
  */
-module.exports = function (componet, di) {
+module.exports = function (componet, di, bootstrap) {
     "use strict";
     var viewLoader,
         logger = componet.get('core/logger'),
         loggerModel = di.load('@{modelsPath}/logger');
 
+    bootstrap.setListenPort(9000);
+    bootstrap.setListenHost('localhost');
     // attach core path
     di.setAlias('core', '@{appPath}/core');
     // set widgets path

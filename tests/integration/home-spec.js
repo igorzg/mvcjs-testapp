@@ -131,7 +131,7 @@ describe('controllers/home', function () {
         );
         spyOn(response, 'end').and.callThrough();
 
-        parseRequest.parse.call(parseRequest).then(function () {
+        parseRequest._process.call(parseRequest).then(function () {
             expect(onEndData.indexOf('Fast, TDD driven, opinionated lightweight mvc framework for Node.js') > -1).toBe(true);
             expect(onEndData.indexOf('MVCJS &nbsp;&nbsp;&nbsp;') > -1).toBe(true);
             expect(response.end).toHaveBeenCalled();
@@ -166,7 +166,7 @@ describe('controllers/home', function () {
         );
         spyOn(response, 'end').and.callThrough();
 
-        parseRequest.parse.call(parseRequest).then(function () {
+        parseRequest._process.call(parseRequest).then(function () {
             expect(onEndData.indexOf('<h5>SOME_TEXT</h5>') > -1).toBe(true);
             expect(onEndData.indexOf('CUSTOM_TITLE') > -1).toBe(true);
             expect(onEndData.indexOf('CUSTOM_DESC') > -1).toBe(true);

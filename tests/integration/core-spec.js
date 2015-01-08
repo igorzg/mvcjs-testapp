@@ -122,7 +122,7 @@ describe('controllers/core', function () {
         );
         spyOn(response, 'end').and.callThrough();
 
-        parseRequest.parse.call(parseRequest).then(function () {
+        parseRequest._process.call(parseRequest).then(function () {
             expect(onEndData.indexOf('STACK') > -1).toBe(true);
             expect(onEndData.indexOf('HttpError: 404') > -1).toBe(true);
             expect(onEndData.indexOf('Not found') > -1).toBe(true);

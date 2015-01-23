@@ -1,0 +1,7 @@
+{% if menu.length > 0 %}
+<ul class="mv-menu">
+    {% for i in menu %}
+        <li><a href="{{i.link}}" {% if i.blank %}target="_blank"{% endif %}>{{i.title}}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}

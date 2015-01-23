@@ -17,6 +17,10 @@ module.exports = function (componet, di) {
             route: 'home/<action>'
         },
         {
+            pattern: 'module/<controller>/<action>',
+            route: 'module/<controller>/<action>'
+        },
+        {
             dynamic: true,
             constructor: di.load('@{envPath}/dynamic-router')
         }

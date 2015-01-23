@@ -61,5 +61,11 @@
     "alt": "",
     "route": "home/content",
     "blank": false
+  },
+  {
+    "title": "MODULE EXAMPLE",
+    "link": "/modules",
+    "route": "module/home/index",
+    "blank": false
   }
 ]

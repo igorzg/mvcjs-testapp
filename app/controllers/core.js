@@ -59,12 +59,25 @@ CoreController = Controller.inherit({
      * Error handler for application
      * @return {*|string}
      */
-    action_error: function Core_error(error) {
+    action_error: function Core_error(params) {
         // currently
         this.locals.pageTitle = 'Error - mvcjs nodejs framework';
-        this.locals.text = error.toString().replace(/\\n/g, '\n');
 
-        this.setStatusCode(error.code);
+        var e = "";
+        if (!params.exception.trace) {
+            e += "\n" + params.exception.stack;
+        } else {
+            e = params.exception.toString();
+        }
+        e += '\n ROUTE: ' + JSON.stringify(this.getParsedUrl(), null, '\t');
+        e = e.replace(/\\n/g, '\n').replace(/\\\'/g, "'");
+
+        if (params.exception && params.exception.code) {
+            this.setStatusCode(params.exception.code);
+        }
+
+        this.locals.error = e;
+
 
         return this.renderFile('home/error', this.locals);
     }

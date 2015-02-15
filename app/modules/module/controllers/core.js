@@ -49,24 +49,6 @@ CoreController = Controller.inherit({
     beforeEach: function Core_beforeEach() {
         // handle hooks
         return widgetHooks.handle(['menu-hook']); // run menu alias
-    },
-    /**
-     * @since 0.0.1
-     * @author Igor Ivanovic
-     * @method CoreController#action_error
-     *
-     * @description
-     * Error handler for application
-     * @return {*|string}
-     */
-    action_error: function Core_error(error) {
-        // currently
-        this.locals.pageTitle = 'Error - mvcjs nodejs framework';
-        this.locals.text = error.toString().replace(/\\n/g, '\n');
-
-        this.setStatusCode(error.code);
-
-        return this.renderFile('test/error', this.locals);
     }
 });
 

@@ -1,4 +1,4 @@
-describe('controllers/home', function () {
+describe('integration/controllers/home', function () {
     var di = require('mvcjs'),
         component,
         router,
@@ -173,7 +173,7 @@ describe('controllers/home', function () {
             expect(response.end).toHaveBeenCalled();
             done();
         }, function (error) {
-            console.log('error', error);
+            //console.log('error', error);
             expect(response.end).toHaveBeenCalled();
             done();
         });

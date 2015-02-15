@@ -1,4 +1,4 @@
-describe('controllers/core', function () {
+describe('integration/controllers/core', function () {
     var di = require('mvcjs'),
         component,
         router,
@@ -104,6 +104,9 @@ describe('controllers/core', function () {
         var request = {
             method: 'GET',
             on: function () {
+            },
+            emit: function() {
+
             }
         };
         var response = {
@@ -129,7 +132,7 @@ describe('controllers/core', function () {
             expect(response.end).toHaveBeenCalled();
             done();
         }, function (error) {
-            console.log('error', error);
+            //console.log('\nerror', error, error.stack);
             expect(response.end).toHaveBeenCalled();
             done();
         });
@@ -137,6 +140,7 @@ describe('controllers/core', function () {
 
 
     afterEach(function () {
+        expect(typeof onEndData).toBe("string");
         expect(onEndData.indexOf('<li><a href="/" >Home</a></li>') > -1).toBe(true);
         expect(onEndData.indexOf('<li><a href="/error/handler" >Error handling</a></li>') > -1).toBe(true);
         expect(onEndData.indexOf('<li><a href="/guide/tdd" >TDD</a></li>') > -1).toBe(true);

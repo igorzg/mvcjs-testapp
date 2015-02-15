@@ -72,7 +72,7 @@ describe('controllers/home', function () {
                 id : 'github-bjs',
                 async : true
             } ],
-            version : '0.1.0-beta-24'
+            version : '0.1.0-beta-37'
         });
         expect(result).toBe('RENDERED');
         expect(api.locals.scripts.length).toBe(1);
@@ -189,17 +189,26 @@ describe('controllers/home', function () {
             renderFile: function(name, locals) {
                 expect(name).toBe('home/error');
                 expect(locals.pageTitle).toBe('Error - mvcjs nodejs framework');
-                expect(locals.text).toBe('ERROR');
+                expect(locals.error.indexOf('ERROR') > -1).toBe(true);
                 return 'RENDER';
+            },
+            getParsedUrl: function () {
+                return {
+                    pathname: 'home/error'
+                };
             }
+
         };
         spyOn(api, 'setStatusCode').and.callThrough();
         spyOn(api, 'renderFile').and.callThrough();
         var controller = new Home({});
         var response = controller.action_error.call(api, {
-            code: 500,
-            toString: function() {
-                return "ERROR";
+            exception: {
+                code: 500,
+                trace: true,
+                toString: function() {
+                    return "ERROR";
+                }
             }
         });
         expect(api.setStatusCode).toHaveBeenCalled();

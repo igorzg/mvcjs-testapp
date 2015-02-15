@@ -64,10 +64,12 @@ CoreController = Controller.inherit({
         this.locals.pageTitle = 'Error - mvcjs nodejs framework';
 
         var e = "";
-        if (!params.exception.trace) {
-            e += "\n" + params.exception.stack;
-        } else {
-            e = params.exception.toString();
+        if (params.exception) {
+            if (!params.exception.trace) {
+                e += "\n" + params.exception.stack;
+            } else {
+                e = params.exception.toString();
+            }
         }
         e += '\n ROUTE: ' + JSON.stringify(this.getParsedUrl(), null, '\t');
         e = e.replace(/\\n/g, '\n').replace(/\\\'/g, "'");

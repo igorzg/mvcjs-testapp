@@ -58,17 +58,22 @@ describe('controllers/core', function () {
             renderFile: function(name, locals) {
                 expect(name).toBe('home/error');
                 expect(locals.pageTitle).toBe('Error - mvcjs nodejs framework');
-                expect(locals.text).toBe('ERROR');
+                expect(locals.error.indexOf('ERROR') > -1).toBe(true);
                 return 'RENDER';
+            },
+            getParsedUrl: function () {
+                return {
+                    pathname: 'home/error'
+                };
             }
         };
         spyOn(api, 'setStatusCode').and.callThrough();
         spyOn(api, 'renderFile').and.callThrough();
         var controller = new Core({});
         var response = controller.action_error.call(api, {
-            code: 500,
-            toString: function() {
-                return "ERROR";
+            exception: {
+                code: 500,
+                stack: 'ERROR'
             }
         });
         expect(api.setStatusCode).toHaveBeenCalled();

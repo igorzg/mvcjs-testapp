@@ -71,6 +71,9 @@ CoreController = Controller.inherit({
                 e = params.exception.toString();
             }
         }
+        if (!e) {
+            e = params.exception.stack;
+        }
         e += '\n ROUTE: ' + JSON.stringify(this.getParsedUrl(), null, '\t');
         e = e.replace(/\\n/g, '\n').replace(/\\\'/g, "'");
 

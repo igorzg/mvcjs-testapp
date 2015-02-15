@@ -27,7 +27,6 @@ module.exports = function (componet, di, bootstrap) {
     logger.addHook(loggerModel.save.bind(loggerModel));
 
 
-    di.load('@{envPath}/widget')(componet, di);
     di.load('@{envPath}/router')(componet, di);
     di.load('@{envPath}/import')(componet, di);
 };

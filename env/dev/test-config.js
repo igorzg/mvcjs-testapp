@@ -24,5 +24,4 @@ module.exports = function (componet, di, bootstrap) {
 
 
     di.load('@{envPath}/router')(componet, di);
-    di.load('@{envPath}/import')(componet, di);
 };

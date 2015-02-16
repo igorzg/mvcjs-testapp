@@ -7,13 +7,8 @@
   ],
   "components": [
     {
-      "name": "core/logger",
-      "enabled": true,
-      "write": true,
-      "publish": true,
-      "console": false,
-      "port": 9001,
-      "file": "server.log"
+      "name": "core/http",
+      "filePath": "@{envPath}/fake-http"
     },
     {
       "name": "core/router",
@@ -34,12 +29,8 @@
       "name": "core/assets",
       "path": "@{basePath}/storage/",
       "hook": "^\\/assets"
-    },
-    {
-      "name": "db/mongo",
-      "connection": "mongodb://localhost/testdb"
     }
   ],
-  "config": "config.js",
+  "config": "test-config.js",
   "assetsPath": "@{assetsPath}"
 }

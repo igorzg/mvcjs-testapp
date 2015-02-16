@@ -9,11 +9,12 @@
  */
 module.exports = function (componet, di, bootstrap) {
     "use strict";
-    var logger = componet.get('core/logger'),
+    var viewLoader,
+        logger = componet.get('core/logger'),
         loggerModel = di.load('@{modelsPath}/logger');
 
     bootstrap.setListenPort(9000);
-    bootstrap.setListenHost('localhost');
+    bootstrap.setListenHost('mvcjs.igorivanovic.info');
     // attach core path
     di.setAlias('core', '@{appPath}/core');
     // set widgets path

@@ -1,3 +1,7 @@
+Sponsored by:
+=====
+[![Cuponation](https://avatars0.githubusercontent.com/u/6095679?v=3&s=200)](https://travis-ci.org/AdminJuwel191/node-mvc)
+
 Mvcjs test app
 =====
 MVCJS build:
@@ -21,4 +25,6 @@ Getting started
 3. gulp less-dev
 4. node index
 5. open http://localhost:9000/ to see app
+6. 
+
 

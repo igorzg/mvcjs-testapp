@@ -33,7 +33,7 @@ CoreController = Controller.inherit({
             scripts: [],
             brand: 'MVCJS',
             pageTitle: 'Mvcjs nodejs framework',
-            pageDesc: 'Mvcjs fast, opinionated lightweight mvc framework for Node.js inspired by Yii framework'
+            pageDesc: 'Fast, TDD driven, opinionated lightweight mvc framework for Node.js , a first Node.js framework with dependency injection!'
         };
         this.menu = [];
     },

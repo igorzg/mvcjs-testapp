@@ -21,7 +21,9 @@
     {
       "name": "core/view",
       "views": "@{appPath}/themes/",
-      "theme": "main",
+      "themes": [
+        "main"
+      ],
       "extensions": "@{envPath}/widget",
       "cache": false
     },

@@ -47,7 +47,7 @@ describe('controllers/home', function () {
         expect(controller.locals.scripts.length).toBe(0);
         expect(controller.locals.brand).toBe('MVCJS');
         expect(controller.locals.pageTitle).toBe('Mvcjs nodejs framework');
-        expect(controller.locals.pageDesc).toBe('Mvcjs fast, opinionated lightweight mvc framework for Node.js inspired by Yii framework');
+        expect(controller.locals.pageDesc).toBe('Fast, TDD driven, opinionated lightweight mvc framework for Node.js , a first Node.js framework with dependency injection!');
         expect(controller.menu.length).toBe(0);
     });
 

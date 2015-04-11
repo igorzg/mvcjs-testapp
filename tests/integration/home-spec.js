@@ -10,6 +10,8 @@ describe('integration/controllers/home', function () {
                     resolve();
                 }
             },
+            headers: {},
+            getRequestHeader: function () { return ''; },
             setEncoding: function() {},
             emit: function () {},
             url: '/'
@@ -34,6 +36,8 @@ describe('integration/controllers/home', function () {
                     resolve();
                 }
             },
+            headers: {},
+            getRequestHeader: function () { return ''; },
             setEncoding: function() {},
             emit: function () {},
             url: '/dynamic-content'

@@ -73,7 +73,10 @@ describe('controllers/core', function () {
         var response = controller.action_error.call(api, {
             exception: {
                 code: 500,
-                stack: 'ERROR'
+                stack: 'ERROR',
+                toString: function () {
+                    return this.stack;
+                }
             }
         });
         expect(api.setStatusCode).toHaveBeenCalled();

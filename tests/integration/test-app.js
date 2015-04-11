@@ -69,13 +69,13 @@ mongo.model = function (name) {
 
 var di = require('mvcjs');
 var component = di.load('core/component');
-
+/*
 component.set('core/logger', {}, function () {
     return {
         print: function () {},
         addHook: function () {}
     }
-});
+});*/
 
 component.set('db/mongo', {}, function () {
     return mongo;

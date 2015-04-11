@@ -65,14 +65,7 @@ CoreController = Controller.inherit({
 
         var e = "";
         if (params.exception) {
-            if (!params.exception.trace) {
-                e += "\n" + params.exception.stack;
-            } else {
-                e = params.exception.toString();
-            }
-        }
-        if (!e) {
-            e = params.exception.stack;
+            e = params.exception.toString();
         }
         e += '\n ROUTE: ' + JSON.stringify(this.getParsedUrl(), null, '\t');
         e = e.replace(/\\n/g, '\n').replace(/\\\'/g, "'");

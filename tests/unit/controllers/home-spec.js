@@ -72,7 +72,7 @@ describe('controllers/home', function () {
                 id : 'github-bjs',
                 async : true
             } ],
-            version : '0.1.0-rc2'
+            version : '0.1.0-rc3'
         });
         expect(result).toBe('RENDERED');
         expect(api.locals.scripts.length).toBe(1);

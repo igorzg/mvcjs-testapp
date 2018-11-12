@@ -7,7 +7,7 @@ Demo app build:
 [![Build Status](https://travis-ci.org/igorzg/mvcjs-testapp.svg?branch=master)](https://travis-ci.org/igorzg/mvcjs-testapp)
 
 
-[Mvcjs](http://mvcjs.igorivanovic.info/) is a first nodejs framework which supports modules as bundles and a first node.js framework with dependency injection!
+Mvcjs is a first nodejs framework which supports modules as bundles and a first node.js framework with dependency injection!
 
 Requirements for running demo app
 ====
